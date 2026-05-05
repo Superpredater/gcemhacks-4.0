@@ -1,0 +1,100 @@
+// ─── NEURAL SYNC LEVELS ───────────────────────────────────────────────────────
+
+export const levels = [
+  {
+    id: 1,
+    title: 'Algebra Foundations',
+    subject: 'Mathematics',
+    mode: 'focus',
+    nodes: [
+      { id: 'n1',  label: 'x² - 5x + 6',      type: 'formula',  position: [-3,  1.5,  0] },
+      { id: 'n2',  label: '(x-2)(x-3)',        type: 'answer',   position: [ 3,  1.5,  0] },
+      { id: 'n3',  label: 'Quadratic',         type: 'concept',  position: [ 0,  2.5,  1] },
+      { id: 'n4',  label: '2x + 5 = 3x - 7',  type: 'formula',  position: [-3, -1.5,  0] },
+      { id: 'n5',  label: 'x = 12',            type: 'answer',   position: [ 3, -1.5,  0] },
+      { id: 'n6',  label: 'Linear Equation',   type: 'concept',  position: [ 0, -2.5,  1] },
+      { id: 'n7',  label: '3(x+2) - 2(x-1)',  type: 'formula',  position: [-3,  0,   -1] },
+      { id: 'n8',  label: 'x + 8',             type: 'answer',   position: [ 3,  0,   -1] },
+    ],
+    validConnections: [
+      ['n1','n2'], ['n1','n3'],
+      ['n4','n5'], ['n4','n6'],
+      ['n7','n8'],
+    ],
+    hints: {
+      'n1-n2': 'Factor the quadratic: find two numbers that multiply to 6 and add to -5',
+      'n4-n5': 'Move x terms left, constants right: 2x - 3x = -7 - 5',
+      'n7-n8': 'Expand: 3x + 6 - 2x + 2 = x + 8',
+    },
+  },
+  {
+    id: 2,
+    title: 'Trigonometry Sync',
+    subject: 'Mathematics',
+    mode: 'challenge',
+    nodes: [
+      { id: 'n1',  label: 'sin(30°)',          type: 'formula',  position: [-4,  2,    0] },
+      { id: 'n2',  label: '1/2',               type: 'answer',   position: [ 4,  2,    0] },
+      { id: 'n3',  label: 'cos(60°)',          type: 'formula',  position: [-4,  0,    1] },
+      { id: 'n4',  label: '√3/2',             type: 'answer',   position: [ 4,  0,    1] },
+      { id: 'n5',  label: 'tan(45°)',          type: 'formula',  position: [-4, -2,    0] },
+      { id: 'n6',  label: '1',                 type: 'answer',   position: [ 4, -2,    0] },
+      { id: 'n7',  label: 'sin²θ + cos²θ',    type: 'formula',  position: [-2,  0,   -2] },
+      { id: 'n8',  label: 'Pythagorean ID',   type: 'concept',  position: [ 2,  0,   -2] },
+      { id: 'n9',  label: 'SOH-CAH-TOA',      type: 'concept',  position: [ 0,  3,   -1] },
+      { id: 'n10', label: 'cos(30°)',          type: 'formula',  position: [-2, -3,    1] },
+    ],
+    validConnections: [
+      ['n1','n2'], ['n3','n2'],
+      ['n5','n6'],
+      ['n7','n8'],
+      ['n1','n9'], ['n3','n9'], ['n5','n9'],
+      ['n10','n4'],
+    ],
+    hints: {
+      'n1-n2': 'sin(30°) = opposite/hypotenuse = 1/2',
+      'n3-n2': 'cos(60°) = cos(90°-30°) = sin(30°) = 1/2',
+      'n5-n6': 'tan(45°) = sin/cos = (1/√2)/(1/√2) = 1',
+      'n7-n8': 'sin²θ + cos²θ = 1 is the Pythagorean identity',
+    },
+  },
+  {
+    id: 3,
+    title: 'Calculus Neural Map',
+    subject: 'Mathematics',
+    mode: 'revision',
+    nodes: [
+      { id: 'n1',  label: 'd/dx(x³)',          type: 'formula',  position: [-4,  2,    0] },
+      { id: 'n2',  label: '3x²',               type: 'answer',   position: [ 4,  2,    0] },
+      { id: 'n3',  label: 'Power Rule',        type: 'concept',  position: [ 0,  3,    0] },
+      { id: 'n4',  label: 'd/dx(e^x)',         type: 'formula',  position: [-4,  0,    1] },
+      { id: 'n5',  label: 'e^x',               type: 'answer',   position: [ 4,  0,    1] },
+      { id: 'n6',  label: '∫2x dx',            type: 'formula',  position: [-4, -2,    0] },
+      { id: 'n7',  label: 'x² + C',            type: 'answer',   position: [ 4, -2,    0] },
+      { id: 'n8',  label: 'Integration',       type: 'concept',  position: [ 0, -3,    0] },
+      { id: 'n9',  label: 'lim(x→0) sin(x)/x',type: 'formula',  position: [-2,  0,   -2] },
+      { id: 'n10', label: '1',                 type: 'answer',   position: [ 2,  0,   -2] },
+      { id: 'n11', label: 'Chain Rule',        type: 'concept',  position: [-3, -1,    2] },
+      { id: 'n12', label: 'd/dx[sin(x²)]',    type: 'formula',  position: [ 3, -1,    2] },
+    ],
+    validConnections: [
+      ['n1','n2'], ['n1','n3'],
+      ['n4','n5'],
+      ['n6','n7'], ['n6','n8'],
+      ['n9','n10'],
+      ['n11','n12'],
+    ],
+    hints: {
+      'n1-n2': 'Power rule: bring down exponent, reduce by 1 → 3x²',
+      'n4-n5': 'e^x is its own derivative — unique property!',
+      'n6-n7': 'Reverse power rule: ∫2x dx = x² + C',
+      'n9-n10': 'Famous limit: lim(x→0) sin(x)/x = 1',
+    },
+  },
+];
+
+export const MODES = {
+  focus:    { label: '🧘 Focus Mode',    desc: 'No timer — learn at your pace',    color: '#22c55e', timeLimit: 0   },
+  challenge:{ label: '⚡ Challenge Mode', desc: 'Light timer — stay sharp',         color: '#eab308', timeLimit: 120 },
+  revision: { label: '📖 Revision Mode', desc: 'Weak concepts — reinforce memory', color: '#8b5cf6', timeLimit: 0   },
+};
